@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import { BookOpen, GraduationCap, MapPin, Mail, Linkedin, Github, Download, Sparkles, User, FileText, Instagram } from "lucide-react";
 import { personalInfo, educationList } from "../types";
-import profilePic from "C:/Users/LENOVO/OneDrive/Desktop/mohit-sharma-portfolio/src/assets/images/profile.jpg";
+import profilePic from "../assets/images/profile.jpg";
 export default function About() {
   const [downloading, setDownloading] = useState(false);
   const [showEmail, setShowEmail] = useState(false);
