@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { motion } from "motion/react";
 import { Mail, Linkedin, Github, Send, MapPin, Sparkles, CheckCircle, Terminal } from "lucide-react";
 import { personalInfo } from "../types";
+import emailjs from "@emailjs/browser";
 
 export default function Contact() {
   const [formState, setFormState] = useState({ name: "", email: "", subject: "", message: "" });
@@ -24,47 +25,42 @@ export default function Contact() {
     setStatus("submitting");
     setTerminalLogs([
       "[SYSTEM] Initializing instant email dispatch protocol...",
-      "[SYS] Routing payload via FormSubmit.co SMTP relay gateway...",
-      "[SYS] Compiling payload packets with recaptcha disabled...",
-      "[SYS] Establishing handshake with m1mohitsharma1@gmail.com relay..."
+      "[SYS] Routing payload via EmailJS SMTP relay gateway...",
+      "[SYS] Compiling payload packets...",
+      "[SYS] Establishing handshake with EmailJS servers..."
     ]);
 
+    const serviceId = (import.meta as any).env.VITE_EMAILJS_SERVICE_ID || "service_fgfjxle";
+    const templateId = (import.meta as any).env.VITE_EMAILJS_TEMPLATE_ID || "template_97bgmsq";
+    const publicKey = (import.meta as any).env.VITE_EMAILJS_PUBLIC_KEY || "aAdX4UzoVlJqPbMr0";
+
     try {
-      const response = await fetch("https://formsubmit.co/ajax/1d3881bb6f646893ba57407bb02bf248", {
-        method: "POST",
-        headers: {
-          "Accept": "application/json",
-          "Content-Type": "application/json"
-        },
-        body: JSON.stringify({
-          name: formState.name,
-          email: formState.email,
-          subject: formState.subject || "Portfolio Contact",
-          message: formState.message,
-          _captcha: "false"
-        })
-      });
+      const templateParams = {
+        name: formState.name,
+        email: formState.email,
+        subject: formState.subject,
+        message: formState.message
+      };
 
-      const result = await response.json();
+      const result = await emailjs.send(serviceId, templateId, templateParams, publicKey);
 
-      if (response.ok && (result.success === "true" || result.success === true)) {
+      if (result.status === 200 || result.text === "OK") {
         setStatus("success");
         setTerminalLogs(prev => [
           ...prev,
-          "[OK] Payload received successfully by SMTP relay.",
-          "[OK] Message successfully queued for m1mohitsharma1@gmail.com.",
-          "[INFO] Note for Mohit: If this is the first submission on this site, FormSubmit will send you a one-time activation link to m1mohitsharma1@gmail.com. Please check your inbox/spam folder and click 'Activate Form' to start receiving messages directly.",
+          "[OK] Payload received successfully by EmailJS SMTP relay.",
+          "[OK] Message successfully queued for dispatch.",
           "[SYSTEM] Signal fully transmitted. Closing socket connection."
         ]);
         setFormState({ name: "", email: "", subject: "", message: "" });
       } else {
-        throw new Error(result.message || "Relay rejected transmission.");
+        throw new Error(`EmailJS responded with status: ${result.status}`);
       }
     } catch (error: any) {
       setStatus("error");
       setTerminalLogs(prev => [
         ...prev,
-        `[ERROR] Payload delivery failed: ${error?.message || "Relay connection timeout."}`,
+        `[ERROR] Payload delivery failed: ${error?.text || error?.message || "EmailJS connection timeout."}`,
         "[SYSTEM] Unable to auto-route message to SMTP gateway.",
         "[SYSTEM] Please try submitting again or email directly to m1mohitsharma1@gmail.com"
       ]);
