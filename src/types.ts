@@ -179,7 +179,8 @@ export const certifications: Certification[] = [
       "Prompt Engineering",
       "Large Language Models (LLMs)",
       "AI Applications & Intelligent Workflows"
-    ]
+    ],
+    certificateUrl: "https://www.linkedin.com/in/mohit-sharma-ba0585386/overlay/Certifications/92106384/treasury/?profileId=ACoAAF8gDGgBe5O-khN-zy_vJk3yrn6PjynmmfU"
   },
   {
     id: "cert-analytics",
@@ -192,7 +193,8 @@ export const certifications: Certification[] = [
       "Event-Based Analytics",
       "User Journey & Audience Measurement",
       "Data-Driven Decision Making & Web Analytics"
-    ]
+    ],
+    certificateUrl: "https://www.linkedin.com/in/mohit-sharma-ba0585386/overlay/Certifications/652697330/treasury/?profileId=ACoAAF8gDGgBe5O-khN-zy_vJk3yrn6PjynmmfU"
   }
 ];
 

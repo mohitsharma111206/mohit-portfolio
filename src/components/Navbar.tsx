@@ -3,37 +3,7 @@ import { ArrowRight, Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "motion/react";
 import { personalInfo } from "../types";
 
-// Animation variants for floating elements staggered entrance
-const containerVariants = {
-  hidden: {},
-  show: {
-    transition: {
-      staggerChildren: 0.05,
-    },
-  },
-};
 
-const itemVariants = {
-  hidden: { opacity: 0, x: 25, scale: 0.95 },
-  show: {
-    opacity: 1,
-    x: 0,
-    scale: 1,
-    transition: {
-      type: "spring",
-      stiffness: 260,
-      damping: 22,
-    },
-  },
-  exit: {
-    opacity: 0,
-    x: 15,
-    scale: 0.95,
-    transition: {
-      duration: 0.15,
-    },
-  },
-};
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -239,61 +209,37 @@ export default function Navbar() {
         </div>
       </header>
 
-      {/* Mobile Floating Menu Overlay */}
-      <AnimatePresence>
-        {mobileMenuOpen && (
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.2 }}
-            className="fixed inset-0 z-30 bg-slate-950/25 backdrop-blur-[10px] flex flex-col items-end justify-start pt-28 pb-8 pr-6 sm:pr-8 overflow-y-auto"
-            onClick={() => setMobileMenuOpen(false)}
+      {/* Mobile Floating Menu Overlay - Static rendering to prevent lag */}
+      {mobileMenuOpen && (
+        <div
+          className="fixed inset-0 z-30 bg-slate-950/90 flex flex-col items-end justify-start pt-28 pb-8 pr-6 sm:pr-8 overflow-y-auto"
+          onClick={() => setMobileMenuOpen(false)}
+        >
+          <div
+            className="flex flex-col gap-3 items-end w-fit"
+            onClick={(e) => e.stopPropagation()}
           >
-            <motion.div
-              variants={containerVariants}
-              initial="hidden"
-              animate="show"
-              exit="hidden"
-              className="flex flex-col gap-3 items-end w-fit"
-              onClick={(e) => e.stopPropagation()}
-            >
-              {mobileNavLinks.map((link) => {
-                const isActive = activeSection === link.target;
-                return (
-                  <motion.button
-                    key={link.name}
-                    variants={itemVariants}
-                    onClick={() => {
-                      scrollToSection(link.target);
-                    }}
-                    className={`px-5 py-2.5 rounded-[18px] text-xs font-mono tracking-wider transition-all duration-200 cursor-pointer whitespace-nowrap backdrop-blur-md ${
-                      isActive
-                        ? "bg-cyan-500/10 border border-cyan-400 text-cyan-300 font-bold shadow-[0_0_15px_rgba(34,211,238,0.25),_inset_0_1px_1px_rgba(255,255,255,0.15)]"
-                        : "bg-slate-950/40 border border-white/10 text-slate-400 hover:text-white hover:border-white/20 shadow-[inset_0_1px_1px_rgba(255,255,255,0.03)]"
-                    }`}
-                    whileHover={{ 
-                      scale: 1.03, 
-                      boxShadow: isActive 
-                        ? "0_0_20px_rgba(34,211,238,0.35), inset 0 1px 1px rgba(255,255,255,0.2)" 
-                        : "0_0_12px_rgba(34,211,238,0.12), inset 0 1px 1px rgba(255,255,255,0.08)",
-                      borderColor: isActive 
-                        ? "rgba(34,211,238,0.9)" 
-                        : "rgba(34,211,238,0.45)",
-                      backgroundColor: isActive
-                        ? "rgba(6,182,212,0.15)"
-                        : "rgba(255,255,255,0.08)"
-                    }}
-                    whileTap={{ scale: 0.97 }}
-                  >
-                    {link.name}
-                  </motion.button>
-                );
-              })}
-            </motion.div>
-          </motion.div>
-        )}
-      </AnimatePresence>
+            {mobileNavLinks.map((link) => {
+              const isActive = activeSection === link.target;
+              return (
+                <button
+                  key={link.name}
+                  onClick={() => {
+                    scrollToSection(link.target);
+                  }}
+                  className={`px-5 py-2.5 rounded-[18px] text-xs font-mono tracking-wider transition-colors cursor-pointer whitespace-nowrap ${
+                    isActive
+                      ? "bg-cyan-500/10 border border-cyan-400 text-cyan-300 font-bold shadow-[0_0_15px_rgba(34,211,238,0.25)]"
+                      : "bg-slate-900 border border-white/10 text-slate-400 hover:text-white hover:border-white/20"
+                  }`}
+                >
+                  {link.name}
+                </button>
+              );
+            })}
+          </div>
+        </div>
+      )}
     </>
   );
 }

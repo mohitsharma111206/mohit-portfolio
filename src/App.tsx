@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef, useEffect, useState } from "react";
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import About from "./components/About";
@@ -10,13 +10,36 @@ import Certifications from "./components/Certifications";
 import Hobbies from "./components/Hobbies";
 import Contact from "./components/Contact";
 import SpaceBackground from "./components/SpaceBackground";
+import CustomCursor from "./components/CustomCursor";
+import GlobalCursorGlow from "./components/GlobalCursorGlow";
+import LoadingScreen from "./components/LoadingScreen";
 
 export default function App() {
+  const [isLoading, setIsLoading] = useState(true);
+  const hoverPositionRef = useRef<{ x: number; y: number } | null>(null);
+
+  useEffect(() => {
+    const handlePointerMove = (e: PointerEvent) => {
+      hoverPositionRef.current = { x: e.clientX, y: e.clientY };
+    };
+    window.addEventListener("pointermove", handlePointerMove);
+    return () => window.removeEventListener("pointermove", handlePointerMove);
+  }, []);
+
+
   return (
     <div className="min-h-screen bg-transparent text-slate-100 font-sans selection:bg-cyan-500/30 selection:text-cyan-200 antialiased overflow-x-hidden relative">
       
+      {/* Cinematic Loading Screen */}
+      {isLoading && <LoadingScreen onComplete={() => setIsLoading(false)} />}
+      
+      <CustomCursor />
+      
+      {/* Massive ambient cursor light */}
+      <GlobalCursorGlow />
+      
       {/* Cinematic Deep Space Background */}
-      <SpaceBackground />
+      <SpaceBackground hoverPositionRef={hoverPositionRef} hoverRadius={300} />
       
       {/* Background Ambient Glows (Optimized soft glows complementing nebula clouds) */}
       <div className="absolute top-0 left-0 right-0 h-[1000px] overflow-hidden pointer-events-none z-0">
@@ -57,7 +80,7 @@ export default function App() {
         <Certifications />
 
         {/* Personality & Creativity showcase */}
-        <Hobbies />
+        <Hobbies hoverPositionRef={hoverPositionRef} />
 
         {/* Contact form & CTA */}
         <Contact />

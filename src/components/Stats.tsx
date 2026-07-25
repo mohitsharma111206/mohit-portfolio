@@ -55,9 +55,7 @@ export default function Stats() {
                     {idx === 2 && <Award size={20} className="text-pink-400 group-hover:text-pink-300" />}
                     {idx === 3 && <Brain size={20} className="text-emerald-400 group-hover:text-emerald-300" />}
                   </div>
-                  <span className="text-[10px] font-mono text-white/20 uppercase tracking-widest font-semibold">
-                    Coordinate {idx + 1}
-                  </span>
+
                 </div>
 
                 {/* Card Body: Dynamic text / counter */}

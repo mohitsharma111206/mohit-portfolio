@@ -38,13 +38,16 @@ export default function Certifications() {
             </div>
 
             {certifications.filter(c => c.id.includes("shadowfox") || c.id.includes("tranqli")).map((cert) => (
-              <motion.div
+              <motion.a
                 key={cert.id}
+                href={cert.certificateUrl || undefined}
+                target={cert.certificateUrl ? "_blank" : undefined}
+                rel={cert.certificateUrl ? "noopener noreferrer" : undefined}
                 initial={{ opacity: 0, x: -20 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5 }}
-                className="relative p-6 rounded-3xl bg-white/[0.03] border border-white/10 backdrop-blur-xl hover:border-cyan-500/30 transition-all duration-300 group shadow-lg flex flex-col justify-between"
+                className={`relative p-6 rounded-3xl bg-white/[0.03] border border-white/10 backdrop-blur-xl hover:border-cyan-500/30 transition-all duration-300 group shadow-lg flex flex-col justify-between block ${cert.certificateUrl ? 'cursor-pointer' : ''}`}
               >
                 {/* Visual decoration: Neon aura */}
                 <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/0 via-cyan-500/2 to-transparent opacity-0 group-hover:opacity-100 transition-opacity rounded-3xl pointer-events-none" />
@@ -88,7 +91,7 @@ export default function Certifications() {
                     ID: {cert.id.toUpperCase()}
                   </span>
                 </div>
-              </motion.div>
+              </motion.a>
             ))}
           </div>
 
@@ -99,13 +102,16 @@ export default function Certifications() {
             </div>
 
             {certifications.filter(c => !c.id.includes("shadowfox") && !c.id.includes("tranqli")).map((cert) => (
-              <motion.div
+              <motion.a
                 key={cert.id}
+                href={cert.certificateUrl || undefined}
+                target={cert.certificateUrl ? "_blank" : undefined}
+                rel={cert.certificateUrl ? "noopener noreferrer" : undefined}
                 initial={{ opacity: 0, x: 20 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5 }}
-                className="p-5 rounded-2xl bg-white/[0.03] border border-white/10 backdrop-blur-xl hover:border-purple-500/30 transition-all duration-300 group shadow-md flex flex-col justify-between"
+                className={`p-5 rounded-2xl bg-white/[0.03] border border-white/10 backdrop-blur-xl hover:border-purple-500/30 transition-all duration-300 group shadow-md flex flex-col justify-between block ${cert.certificateUrl ? 'cursor-pointer' : ''}`}
               >
                 <div>
                   <div className="flex justify-between items-start gap-4 mb-3">
@@ -143,7 +149,7 @@ export default function Certifications() {
                     ID: {cert.id.toUpperCase()}
                   </span>
                 </div>
-              </motion.div>
+              </motion.a>
             ))}
           </div>
 

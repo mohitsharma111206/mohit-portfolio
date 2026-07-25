@@ -10,6 +10,10 @@ interface Star {
   color: string;
   depth: number; // 0 (far/blurred) to 1 (near/sharp)
   phase: number;
+  repelX: number;
+  repelY: number;
+  renderX?: number;
+  renderY?: number;
 }
 
 interface DustParticle {
@@ -23,6 +27,8 @@ interface DustParticle {
   driftRange: number;
   driftSpeed: number;
   angle: number;
+  repelX: number;
+  repelY: number;
 }
 
 interface BokehLight {
@@ -49,7 +55,12 @@ interface ShootingStar {
   speed: number;
 }
 
-export default function SpaceBackground() {
+export interface SpaceBackgroundProps {
+  hoverPositionRef?: React.MutableRefObject<{ x: number; y: number } | null>;
+  hoverRadius?: number;
+}
+
+export default function SpaceBackground({ hoverPositionRef, hoverRadius = 160 }: SpaceBackgroundProps) {
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
   const scrollYRef = useRef<number>(0);
 
@@ -124,6 +135,8 @@ export default function SpaceBackground() {
           color: starColors[Math.floor(Math.random() * starColors.length)],
           depth,
           phase: Math.random() * Math.PI * 2,
+          repelX: 0,
+          repelY: 0,
         });
       }
 
@@ -141,6 +154,8 @@ export default function SpaceBackground() {
           driftRange: 10 + Math.random() * 20,
           driftSpeed: 0.001 + Math.random() * 0.002,
           angle: Math.random() * Math.PI * 2,
+          repelX: 0,
+          repelY: 0,
         });
       }
 
@@ -245,15 +260,44 @@ export default function SpaceBackground() {
         // Twinkle update
         star.phase += star.twinkleSpeed;
         const sinWave = Math.sin(star.phase);
-        // Vary opacity around its base opacity
-        star.opacity = Math.max(0.1, star.baseOpacity + sinWave * 0.25);
-
+        
         // Parallax scroll factor based on its depth
-        // Sharp stars (near, depth near 1) scroll slightly faster than distant blurred stars (depth near 0)
-        // Stars scroll offset is in range [0.06 to 0.15]
         const parallaxFactor = 0.06 + star.depth * 0.09;
         const renderedY = (star.y - sY * parallaxFactor) % height;
         const finalY = renderedY < 0 ? height + renderedY : renderedY;
+
+        let targetRepelX = 0;
+        let targetRepelY = 0;
+        let brightnessBoost = 0;
+
+        if (hoverPositionRef?.current) {
+           const hx = hoverPositionRef.current.x;
+           const hy = hoverPositionRef.current.y;
+           const distX = star.x - hx;
+           const distY = finalY - hy;
+           const distance = Math.sqrt(distX * distX + distY * distY);
+           
+           if (distance < hoverRadius) {
+             const force = (hoverRadius - distance) / hoverRadius;
+             // Pronounced gravitational lens distortion
+             targetRepelX = (distX / distance) * force * 40 * star.depth;
+             targetRepelY = (distY / distance) * force * 40 * star.depth;
+             brightnessBoost = force * 0.8;
+           }
+        }
+
+        // Soft mathematical spring return
+        star.repelX += (targetRepelX - star.repelX) * 0.08;
+        star.repelY += (targetRepelY - star.repelY) * 0.08;
+
+        // Vary opacity around its base opacity
+        star.opacity = Math.max(0.1, Math.min(1, star.baseOpacity + sinWave * 0.25 + brightnessBoost));
+        
+        const renderX = star.x + star.repelX;
+        const renderY = finalY + star.repelY;
+        
+        star.renderX = renderX;
+        star.renderY = renderY;
 
         ctx.beginPath();
         ctx.fillStyle = `${star.color}${star.opacity.toFixed(2)})`;
@@ -262,16 +306,16 @@ export default function SpaceBackground() {
         if (star.depth < 0.25) {
           // Distant, soft blurred star
           const softGrad = ctx.createRadialGradient(
-            star.x, finalY, 0,
-            star.x, finalY, star.size
+            renderX, renderY, 0,
+            renderX, renderY, star.size
           );
           softGrad.addColorStop(0, `${star.color}${star.opacity.toFixed(2)})`);
           softGrad.addColorStop(1, `${star.color}0)`);
           ctx.fillStyle = softGrad;
-          ctx.arc(star.x, finalY, star.size, 0, Math.PI * 2);
+          ctx.arc(renderX, renderY, star.size, 0, Math.PI * 2);
         } else {
           // Sharp near star
-          ctx.arc(star.x, finalY, star.size, 0, Math.PI * 2);
+          ctx.arc(renderX, renderY, star.size, 0, Math.PI * 2);
         }
         
         ctx.fill();
@@ -280,30 +324,55 @@ export default function SpaceBackground() {
       // 4. Render Glowing Dust (Sparse, drifting, moving at parallax 0.04)
       dust.forEach((d) => {
         d.angle += d.driftSpeed;
+        
+        let targetRepelX = 0;
+        let targetRepelY = 0;
+        
+        const renderedY = (d.y - sY * 0.04) % height;
+        const finalY = renderedY < 0 ? height + renderedY : renderedY;
+
+        if (hoverPositionRef?.current) {
+           const hx = hoverPositionRef.current.x;
+           const hy = hoverPositionRef.current.y;
+           const distX = d.x - hx;
+           const distY = finalY - hy;
+           const distance = Math.sqrt(distX * distX + distY * distY);
+           
+           if (distance < hoverRadius) {
+             const force = (hoverRadius - distance) / hoverRadius;
+             targetRepelX = (distX / distance) * force * 50; // Stronger push for dust
+             targetRepelY = (distY / distance) * force * 50;
+           }
+        }
+
+        // Soft mathematical spring return
+        d.repelX += (targetRepelX - d.repelX) * 0.08;
+        d.repelY += (targetRepelY - d.repelY) * 0.08;
+
         // Slowly drift horizontally and vertically
         d.x += d.speedX + Math.sin(d.angle) * 0.01;
         d.y += d.speedY;
 
         // Wrap around edges
-        if (d.x < 0) d.x = width;
-        if (d.x > width) d.x = 0;
-        if (d.y < 0) d.y = height;
-        if (d.y > height) d.y = 0;
+        if (d.x < -100) d.x = width + 100;
+        if (d.x > width + 100) d.x = -100;
+        if (d.y < -100) d.y = height + 100;
+        if (d.y > height + 100) d.y = -100;
 
-        const renderedY = (d.y - sY * 0.04) % height;
-        const finalY = renderedY < 0 ? height + renderedY : renderedY;
+        const renderX = d.x + d.repelX;
+        const renderY = finalY + d.repelY;
 
         ctx.beginPath();
         const glow = ctx.createRadialGradient(
-          d.x, finalY, 0,
-          d.x, finalY, d.size * 2
+          renderX, renderY, 0,
+          renderX, renderY, d.size * 2
         );
         glow.addColorStop(0, `${d.color}${d.opacity.toFixed(2)})`);
         glow.addColorStop(0.5, `${d.color}${(d.opacity * 0.4).toFixed(2)})`);
         glow.addColorStop(1, `${d.color}0)`);
         
         ctx.fillStyle = glow;
-        ctx.arc(d.x, finalY, d.size * 2, 0, Math.PI * 2);
+        ctx.arc(renderX, renderY, d.size * 2, 0, Math.PI * 2);
         ctx.fill();
       });
 
