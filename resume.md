@@ -77,11 +77,11 @@ A highly motivated B.Tech AI & Data Science student at GEC Bikaner, passionate a
 ### Vyoma.webx
 <div class="job-header">
   <span class="company">Personal Project</span>
-  <span class="date"><a href="#">View Project</a></span>
+  <span class="date"><a href="https://vyoma-eosin.vercel.app/">View Project</a></span>
 </div>
 
-- Designed and developed a modern web application with a focus on immersive user experience and clean UI architecture.
-- Integrated dynamic loading states and responsive layouts to ensure cross-device compatibility.
+- Engineered immersive 3D scroll animations and an interactive contact form, heavily optimizing rendering logic to ensure a smooth 60FPS user experience.
+- Designed and developed a modern web application with a focus on cutting-edge UI architecture and responsive layouts for cross-device compatibility.
 
 ## Education
 
