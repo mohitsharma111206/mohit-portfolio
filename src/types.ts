@@ -89,13 +89,13 @@ export const internships: Internship[] = [
   },
   {
     company: "Tranqli",
-    role: "Web Development & Designing Intern",
+    role: "Backend AI Engineer Intern",
     duration: "Ongoing / Prior",
-    skills: ["Website Development", "UI/UX Design", "Frontend Development", "Web Design Principles", "Responsive Layouts", "User-Focused Experiences"],
+    skills: ["Backend Engineering", "Artificial Intelligence", "System Architecture", "API Development", "Python"],
     description: [
-      "Crafted high-fidelity website development and responsive layouts prioritizing user-focused experiences.",
-      "Applied advanced frontend web design principles to create aesthetically beautiful and interactive layouts.",
-      "Designed seamless user interfaces (UI/UX) ensuring extreme accessibility, performance, and responsive screen-scaling."
+      "Engineered and maintained scalable backend architectures for integrating artificial intelligence models.",
+      "Designed robust APIs and data pipelines to support AI-driven features and functionalities.",
+      "Optimized system performance and ensured seamless communication between client interfaces and AI microservices."
     ],
     color: "from-purple-500/20 to-pink-500/20 border-purple-500/30 text-purple-400"
   }
@@ -155,17 +155,18 @@ export const certifications: Certification[] = [
   },
   {
     id: "cert-tranqli",
-    title: "Web Development & Designing Internship",
+    title: "Backend AI Engineer Internship",
     organization: "Tranqli",
     issued: "Recent",
     verificationBadge: true,
-    category: "Web Development",
+    category: "AI",
     highlights: [
-      "Web Development & Frontend Development",
-      "Responsive Layouts",
-      "UI/UX Design & Principles",
-      "User Experience & Website Design"
-    ]
+      "Backend Architecture & API Design",
+      "Artificial Intelligence Integration",
+      "System Optimization & Scalability",
+      "AI Microservices"
+    ],
+    certificateUrl: "https://www.linkedin.com/posts/mohit-sharma-ba0585386_backendengineering-ai-artificialintelligence-share-7487533363067760640-sesS/?utm_source=share&utm_medium=member_desktop&rcm=ACoAAF8gDGgBe5O-khN-zy_vJk3yrn6PjynmmfU"
   },
   {
     id: "cert-genai",
