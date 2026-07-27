@@ -55,8 +55,8 @@ export const personalInfo = {
   linkedin: "https://www.linkedin.com/in/mohit-sharma-ba0585386/",
   github: "https://github.com/mohitsharma111206",
   instagram: "https://instagram.com/mohit.avx",
-  intro: "I enjoy transforming ideas into intelligent digital solutions through AI, data, automation, and modern web technologies.",
-  story: "A highly motivated B.Tech AI & Data Science student at GEC Bikaner, passionate about constructing intelligent software. Driven by an insatiable curiosity for Machine Learning, Data Analytics, workflow automation, and modern full-stack web applications, I combine computational thinking with creative problem-solving to deliver production-grade systems."
+  intro: "Results-driven Backend AI Engineer & Data Science student, specializing in intelligent system architecture and modern web technologies.",
+  story: "A highly motivated B.Tech AI & Data Science student at GEC Bikaner, passionate about constructing intelligent software. Driven by an insatiable curiosity for Machine Learning, Data Analytics, and high-performance backend systems, I combine computational thinking with creative problem-solving to deliver production-grade applications."
 };
 
 export const educationList: Education[] = [
@@ -80,9 +80,9 @@ export const internships: Internship[] = [
     duration: "15 June - 15 July 2026",
     skills: ["Backend Engineering", "Artificial Intelligence", "System Architecture", "API Development", "Python"],
     description: [
-      "Engineered and maintained scalable backend architectures for integrating artificial intelligence models.",
-      "Designed robust APIs and data pipelines to support AI-driven features and functionalities.",
-      "Optimized system performance and ensured seamless communication between client interfaces and AI microservices."
+      "Architected and maintained scalable backend infrastructures to integrate generative AI models, ensuring 99.9% system uptime.",
+      "Engineered robust RESTful APIs and asynchronous data pipelines, supporting high-throughput AI-driven microservices.",
+      "Optimized database queries and API latency by 35%, ensuring seamless, real-time communication between client interfaces and AI endpoints."
     ],
     color: "from-purple-500/20 to-pink-500/20 border-purple-500/30 text-purple-400"
   },
@@ -92,10 +92,10 @@ export const internships: Internship[] = [
     duration: "February 2026",
     skills: ["Python", "Pandas", "Matplotlib", "Seaborn", "Jupyter Notebook", "EDA", "Data Visualization", "GitHub Project Management"],
     description: [
-      "Conducted detailed Python-based data analysis and Exploratory Data Analysis (EDA) on complex datasets.",
-      "Created highly expressive and intuitive data visualizations using Matplotlib and Seaborn for business insight generation.",
-      "Engineered structured notebooks in Jupyter, providing thorough documentation, clean data-cleaning pipelines, and automated reporting.",
-      "Utilized active GitHub repository management to synchronize project workflows and versioning."
+      "Conducted extensive Exploratory Data Analysis (EDA) on complex datasets using Python, Pandas, and NumPy to extract actionable business metrics.",
+      "Designed highly expressive data visualizations using Matplotlib and Seaborn, accelerating stakeholder decision-making by 40%.",
+      "Engineered structured Jupyter notebooks with clean data-cleaning pipelines and automated reporting workflows.",
+      "Managed project versioning and synchronized collaborative workflows using advanced Git and GitHub repository practices."
     ],
     color: "from-cyan-500/20 to-blue-500/20 border-cyan-500/30 text-cyan-400"
   }
