@@ -1,6 +1,6 @@
 export interface Skill {
   name: string;
-  category: 'Programming' | 'Data Science' | 'Artificial Intelligence' | 'Web Development' | 'Automation' | 'Tools';
+  category: 'Programming' | 'Data Science' | 'Artificial Intelligence' | 'Web Development' | 'Backend Development' | 'Automation' | 'Tools';
   level: number; // 1-5 for visual bars/indicators
 }
 
@@ -124,6 +124,12 @@ export const skillsList: Skill[] = [
   { name: "JavaScript", category: "Web Development", level: 5 },
   { name: "Responsive Design", category: "Web Development", level: 5 },
   { name: "UI/UX Design", category: "Web Development", level: 5 },
+
+  // Backend Development
+  { name: "Backend Engineering", category: "Backend Development", level: 5 },
+  { name: "System Architecture", category: "Backend Development", level: 5 },
+  { name: "API Development", category: "Backend Development", level: 5 },
+  { name: "Model Integration", category: "Backend Development", level: 5 },
 
   // Automation
   { name: "n8n", category: "Automation", level: 5 },
