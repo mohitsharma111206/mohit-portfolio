@@ -1,21 +1,35 @@
 import React, { useEffect, useState } from 'react';
-import { motion } from 'framer-motion';
+import { motion, useMotionValue, useSpring } from 'framer-motion';
 
 export default function CustomCursor() {
-  const [mousePosition, setMousePosition] = useState({ x: -100, y: -100 });
+  const cursorX = useMotionValue(-100);
+  const cursorY = useMotionValue(-100);
+
+  // The outer ring lags slightly
+  const springConfig = { damping: 28, stiffness: 400, mass: 0.5 };
+  const cursorXSpring = useSpring(cursorX, springConfig);
+  const cursorYSpring = useSpring(cursorY, springConfig);
+
+  // The inner dot moves almost instantly
+  const dotSpringConfig = { damping: 28, stiffness: 2000, mass: 0.1 };
+  const dotXSpring = useSpring(cursorX, dotSpringConfig);
+  const dotYSpring = useSpring(cursorY, dotSpringConfig);
+
   const [isHovering, setIsHovering] = useState(false);
+  const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
     // Only show custom cursor on desktop devices (non-touch)
     if (window.matchMedia("(pointer: coarse)").matches) return;
 
     const moveCursor = (e: MouseEvent) => {
-      setMousePosition({ x: e.clientX, y: e.clientY });
+      cursorX.set(e.clientX);
+      cursorY.set(e.clientY);
+      if (!isVisible) setIsVisible(true);
     };
     
     const handleMouseOver = (e: MouseEvent) => {
       const target = e.target as HTMLElement;
-      // Recursively check if the target or its parents are clickable
       let currentElement: HTMLElement | null = target;
       let clickable = false;
       
@@ -40,8 +54,6 @@ export default function CustomCursor() {
     // Hide default cursor globally when this script runs
     document.body.style.cursor = 'none';
     
-    // Ensure all standard interactable elements also have no cursor natively 
-    // so our custom cursor doesn't compete with the browser's hand pointer
     const style = document.createElement('style');
     style.innerHTML = `
       * { cursor: none !important; }
@@ -56,10 +68,9 @@ export default function CustomCursor() {
         document.head.removeChild(style);
       }
     };
-  }, []);
+  }, [cursorX, cursorY, isVisible]);
 
-  // Don't render anything if the mouse hasn't moved yet
-  if (mousePosition.x === -100) return null;
+  if (!isVisible) return null;
 
   return (
     <>
@@ -67,32 +78,29 @@ export default function CustomCursor() {
       <motion.div
         className="fixed top-0 left-0 w-2.5 h-2.5 bg-cyan-400 rounded-full pointer-events-none z-[9999]"
         style={{
+          x: dotXSpring,
+          y: dotYSpring,
           translateX: "-50%",
           translateY: "-50%",
-          boxShadow: "0 0 10px rgba(34, 211, 238, 0.5)"
-        }}
-        animate={{
-          x: mousePosition.x,
-          y: mousePosition.y,
+          boxShadow: "0 0 10px rgba(34, 211, 238, 0.5)",
           scale: isHovering ? 0 : 1,
           opacity: isHovering ? 0 : 1
         }}
-        transition={{ type: "spring", stiffness: 2000, damping: 28, mass: 0.1 }}
       />
       {/* The outer ring that slightly lags and scales up on hover */}
       <motion.div
         className="fixed top-0 left-0 w-8 h-8 border-[1.5px] border-cyan-400/80 rounded-full pointer-events-none z-[9998]"
         style={{
+          x: cursorXSpring,
+          y: cursorYSpring,
           translateX: "-50%",
           translateY: "-50%",
         }}
         animate={{
-          x: mousePosition.x,
-          y: mousePosition.y,
           scale: isHovering ? 1.8 : 1,
           backgroundColor: isHovering ? "rgba(34, 211, 238, 0.15)" : "rgba(34, 211, 238, 0)",
         }}
-        transition={{ type: "spring", stiffness: 400, damping: 28, mass: 0.5 }}
+        transition={{ type: "spring", stiffness: 400, damping: 28 }}
       />
     </>
   );
