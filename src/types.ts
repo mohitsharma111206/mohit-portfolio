@@ -75,6 +75,18 @@ export const educationList: Education[] = [
 
 export const internships: Internship[] = [
   {
+    company: "Tranqli",
+    role: "Backend AI Engineer Intern",
+    duration: "Ongoing / Prior",
+    skills: ["Backend Engineering", "Artificial Intelligence", "System Architecture", "API Development", "Python"],
+    description: [
+      "Engineered and maintained scalable backend architectures for integrating artificial intelligence models.",
+      "Designed robust APIs and data pipelines to support AI-driven features and functionalities.",
+      "Optimized system performance and ensured seamless communication between client interfaces and AI microservices."
+    ],
+    color: "from-purple-500/20 to-pink-500/20 border-purple-500/30 text-purple-400"
+  },
+  {
     company: "ShadowFox",
     role: "Data Science Intern",
     duration: "February 2026",
@@ -86,18 +98,6 @@ export const internships: Internship[] = [
       "Utilized active GitHub repository management to synchronize project workflows and versioning."
     ],
     color: "from-cyan-500/20 to-blue-500/20 border-cyan-500/30 text-cyan-400"
-  },
-  {
-    company: "Tranqli",
-    role: "Backend AI Engineer Intern",
-    duration: "Ongoing / Prior",
-    skills: ["Backend Engineering", "Artificial Intelligence", "System Architecture", "API Development", "Python"],
-    description: [
-      "Engineered and maintained scalable backend architectures for integrating artificial intelligence models.",
-      "Designed robust APIs and data pipelines to support AI-driven features and functionalities.",
-      "Optimized system performance and ensured seamless communication between client interfaces and AI microservices."
-    ],
-    color: "from-purple-500/20 to-pink-500/20 border-purple-500/30 text-purple-400"
   }
 ];
 
@@ -138,21 +138,6 @@ export const skillsList: Skill[] = [
 ];
 
 export const certifications: Certification[] = [
-  {
-    id: "cert-shadowfox",
-    title: "Data Science Internship Certificate",
-    organization: "ShadowFox",
-    issued: "February 2026",
-    verificationBadge: true,
-    category: "Data Science",
-    highlights: [
-      "Python Programming",
-      "Data Analysis & Exploratory Data Analysis (EDA)",
-      "Data Visualization (Matplotlib, Seaborn)",
-      "Jupyter Notebook, Data Cleaning & Insight Generation",
-      "Structured Report Writing & Documentation"
-    ]
-  },
   {
     id: "cert-tranqli",
     title: "Backend AI Engineer Internship",
@@ -196,6 +181,21 @@ export const certifications: Certification[] = [
       "Data-Driven Decision Making & Web Analytics"
     ],
     certificateUrl: "https://www.linkedin.com/in/mohit-sharma-ba0585386/overlay/Certifications/652697330/treasury/?profileId=ACoAAF8gDGgBe5O-khN-zy_vJk3yrn6PjynmmfU"
+  },
+  {
+    id: "cert-shadowfox",
+    title: "Data Science Internship Certificate",
+    organization: "ShadowFox",
+    issued: "February 2026",
+    verificationBadge: true,
+    category: "Data Science",
+    highlights: [
+      "Python Programming",
+      "Data Analysis & Exploratory Data Analysis (EDA)",
+      "Data Visualization (Matplotlib, Seaborn)",
+      "Jupyter Notebook, Data Cleaning & Insight Generation",
+      "Structured Report Writing & Documentation"
+    ]
   }
 ];
 
