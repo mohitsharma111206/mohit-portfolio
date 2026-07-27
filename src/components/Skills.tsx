@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
-import { Code, Brain, Database, Workflow, Terminal, Layout, Star } from "lucide-react";
+import { Code, Brain, Database, Workflow, Terminal, Layout, Star, Server } from "lucide-react";
 import { skillsList } from "../types";
 
 const categoryIcons: Record<string, React.ReactNode> = {
@@ -8,6 +8,7 @@ const categoryIcons: Record<string, React.ReactNode> = {
   "Data Science": <Database size={18} className="text-cyan-400" />,
   "Artificial Intelligence": <Brain size={18} className="text-purple-400" />,
   "Web Development": <Layout size={18} className="text-pink-400" />,
+  "Backend Development": <Server size={18} className="text-indigo-400" />,
   "Automation": <Workflow size={18} className="text-emerald-400" />,
   "Tools": <Terminal size={18} className="text-amber-400" />
 };
@@ -17,6 +18,7 @@ const categoryDescriptions: Record<string, string> = {
   "Data Science": "Extracting intelligence, analyzing distributions, and crafting interactive insights.",
   "Artificial Intelligence": "Harnessing foundation models, cognitive agents, and intelligent prompting.",
   "Web Development": "Designing responsive, highly accessible, and aesthetic user interfaces.",
+  "Backend Development": "Architecting robust APIs, scalable systems, and integrating AI models.",
   "Automation": "Connecting application programming interfaces (APIs) to optimize manual flows.",
   "Tools": "Version control, modern execution kernels, and rapid staging platforms."
 };
@@ -46,6 +48,12 @@ const categoryColors: Record<string, { tag: string; border: string; glow: string
     glow: "from-pink-500/5",
     text: "text-pink-400"
   },
+  "Backend Development": {
+    tag: "bg-indigo-500/10 text-indigo-300 border-indigo-500/20 hover:bg-indigo-500/20",
+    border: "group-hover:border-indigo-500/30",
+    glow: "from-indigo-500/5",
+    text: "text-indigo-400"
+  },
   "Automation": {
     tag: "bg-emerald-500/10 text-emerald-300 border-emerald-500/20 hover:bg-emerald-500/20",
     border: "group-hover:border-emerald-500/30",
@@ -63,7 +71,7 @@ const categoryColors: Record<string, { tag: string; border: string; glow: string
 export default function Skills() {
   const [selectedCategory, setSelectedCategory] = useState<string>("All");
 
-  const categories = ["All", "Artificial Intelligence", "Data Science", "Programming", "Web Development", "Automation", "Tools"];
+  const categories = ["All", "Artificial Intelligence", "Data Science", "Programming", "Web Development", "Backend Development", "Automation", "Tools"];
 
   // Unique categories list for grouping
   const activeCategories = selectedCategory === "All"
@@ -109,7 +117,7 @@ export default function Skills() {
                 }`}
               >
                 {cat === "All" ? <Star size={12} /> : categoryIcons[cat]}
-                {cat === "Artificial Intelligence" ? "AI" : cat === "Web Development" ? "Web Dev" : cat}
+                {cat === "Artificial Intelligence" ? "AI" : cat === "Web Development" ? "Web Dev" : cat === "Backend Development" ? "Backend" : cat}
               </button>
             );
           })}
