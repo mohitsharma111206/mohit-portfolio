@@ -10,27 +10,11 @@ const AnimatedIcon = ({ name, isActive, prefersReducedMotion }: { name: string, 
   
   useEffect(() => {
     if (prefersReducedMotion) return;
-    let isMounted = true;
-    
-    const scheduleNext = () => {
-      if (!isMounted) return;
-      if (isActive) return; 
-      
-      const delay = 5000 + Math.random() * 5000;
-      timeoutRef.current = setTimeout(async () => {
-        if (!isMounted || isActive) return;
-        await controls.start("action");
-        await controls.start("rest");
-        scheduleNext();
-      }, delay);
-    };
-    
-    scheduleNext();
-    
-    return () => {
-      isMounted = false;
-      if (timeoutRef.current) clearTimeout(timeoutRef.current);
-    };
+    if (isActive) {
+      controls.start("action");
+    } else {
+      controls.start("rest");
+    }
   }, [isActive, controls, prefersReducedMotion]);
 
   const icons: Record<string, JSX.Element> = {
@@ -124,18 +108,14 @@ function BentoCard({ hobby, idx, isHovered, isAnotherHovered, onEnter, hoverPosi
       animate={{
         scale: isHovered ? 1.02 : 1,
         y: isHovered ? -4 : 0,
-        filter: isHovered 
-          ? "brightness(1.1) drop-shadow(0 25px 35px rgba(0,0,0,0.4))" 
-          : isAnotherHovered 
-            ? "brightness(0.7) grayscale(0.2) drop-shadow(0 0px 0px rgba(0,0,0,0))" 
-            : "brightness(1) drop-shadow(0 4px 10px rgba(0,0,0,0.1))"
+        opacity: isAnotherHovered ? 0.6 : 1
       }}
       transition={{ type: "spring", stiffness: 300, damping: 25 }}
       style={{
         zIndex: isHovered ? 50 : 10,
         borderColor: isHovered ? `rgba(${theme.rgb}, 0.5)` : 'rgba(255,255,255,0.08)'
       }}
-      className={`relative group rounded-3xl overflow-hidden cursor-default transition-colors duration-500 will-change-transform select-none ${spanClass} min-h-[220px] md:min-h-[280px] bg-white/[0.02] border backdrop-blur-[24px]`}
+      className={`relative group rounded-3xl overflow-hidden cursor-default transition-colors duration-500 select-none ${spanClass} min-h-[220px] md:min-h-[280px] bg-white/[0.02] border backdrop-blur-md`}
     >
       {/* Noise Texture */}
       <div 
@@ -190,14 +170,6 @@ interface HobbiesProps {
 
 export default function Hobbies({ hoverPositionRef }: HobbiesProps) {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
-  const containerRef = useRef<HTMLDivElement>(null);
-  const [mousePos, setMousePos] = useState({ x: 500, y: 300 });
-
-  const handlePointerMove = (e: React.PointerEvent) => {
-    if (!containerRef.current) return;
-    const rect = containerRef.current.getBoundingClientRect();
-    setMousePos({ x: e.clientX - rect.left, y: e.clientY - rect.top });
-  };
 
   const handlePointerLeave = () => {
     setHoveredIndex(null);
@@ -219,22 +191,9 @@ export default function Hobbies({ hoverPositionRef }: HobbiesProps) {
       
       {/* Bento Grid Container */}
       <div 
-        ref={containerRef}
-        onPointerMove={handlePointerMove}
         onPointerLeave={handlePointerLeave}
         className="relative max-w-5xl mx-auto"
       >
-        {/* Shared Ambient Cursor Light (Illuminates grid from behind) */}
-        <div 
-          className="absolute w-[500px] h-[500px] rounded-full blur-[100px] pointer-events-none transition-opacity duration-700 hidden md:block"
-          style={{
-            background: hoveredIndex !== null ? `rgba(${hobbyThemes[hobbiesList[hoveredIndex].name].rgb}, 0.2)` : 'transparent',
-            left: mousePos.x,
-            top: mousePos.y,
-            transform: "translate(-50%, -50%)",
-            zIndex: 0
-          }}
-        />
 
         {/* CSS Grid */}
         <div className="relative z-10 grid grid-cols-1 md:grid-cols-4 lg:grid-cols-6 gap-4 md:gap-6">
