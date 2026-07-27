@@ -62,6 +62,27 @@ A highly motivated B.Tech AI & Data Science student at GEC Bikaner, passionate a
 - Engineered structured notebooks in Jupyter, providing thorough documentation, clean data-cleaning pipelines, and automated reporting.
 - Utilized active GitHub repository management to synchronize project workflows and versioning.
 
+## Projects
+
+### Interactive AI Portfolio
+<div class="job-header">
+  <span class="company">Personal Project</span>
+  <span class="date"><a href="https://github.com/mohitsharma111206/mohit-portfolio">View Project</a></span>
+</div>
+
+- Architected a high-performance, interactive personal portfolio using React, TypeScript, and Framer Motion.
+- Engineered a custom physics-based cursor glow and fluid micro-interactions to enhance user engagement.
+- Optimized component rendering to achieve zero lag on mobile environments while maintaining complex backdrop blurs.
+
+### Vyoma.webx
+<div class="job-header">
+  <span class="company">Personal Project</span>
+  <span class="date"><a href="#">View Project</a></span>
+</div>
+
+- Designed and developed a modern web application with a focus on immersive user experience and clean UI architecture.
+- Integrated dynamic loading states and responsive layouts to ensure cross-device compatibility.
+
 ## Education
 
 ### Bachelor of Technology (B.Tech) - Artificial Intelligence & Data Science
