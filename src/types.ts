@@ -92,10 +92,10 @@ export const internships: Internship[] = [
     duration: "February 2026",
     skills: ["Python", "Pandas", "Matplotlib", "Seaborn", "Jupyter Notebook", "EDA", "Data Visualization", "GitHub Project Management"],
     description: [
-      "Conducted extensive Exploratory Data Analysis (EDA) on complex datasets using Python, Pandas, and NumPy to extract actionable business metrics.",
-      "Designed highly expressive data visualizations using Matplotlib and Seaborn, accelerating stakeholder decision-making by 40%.",
-      "Engineered structured Jupyter notebooks with clean data-cleaning pipelines and automated reporting workflows.",
-      "Managed project versioning and synchronized collaborative workflows using advanced Git and GitHub repository practices."
+      "Conducted extensive Exploratory Data Analysis (EDA) on real-world datasets including Delhi Air Quality Index (AQI) and Cricket Fielding Data.",
+      "Designed comprehensive data visualization suites using Matplotlib and Seaborn (histograms, boxplots, scatterplots) to uncover environmental and sports performance trends.",
+      "Engineered structured Python scripts and generated thorough technical documentation to accelerate stakeholder decision-making.",
+      "Managed project versioning and synchronized collaborative workflows using Git and GitHub repository practices."
     ],
     color: "from-cyan-500/20 to-blue-500/20 border-cyan-500/30 text-cyan-400"
   }

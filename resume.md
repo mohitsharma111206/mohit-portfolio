@@ -57,10 +57,10 @@ A highly motivated B.Tech AI & Data Science student at GEC Bikaner, passionate a
   <span class="date">February 2026</span>
 </div>
 
-- Conducted detailed Python-based data analysis and Exploratory Data Analysis (EDA) on complex datasets.
-- Created highly expressive and intuitive data visualizations using Matplotlib and Seaborn for business insight generation.
-- Engineered structured notebooks in Jupyter, providing thorough documentation, clean data-cleaning pipelines, and automated reporting.
-- Utilized active GitHub repository management to synchronize project workflows and versioning.
+- Conducted extensive Exploratory Data Analysis (EDA) on real-world datasets including Delhi Air Quality Index (AQI) and Cricket Fielding Data.
+- Designed comprehensive data visualization suites using Matplotlib and Seaborn (histograms, boxplots, scatterplots) to uncover environmental and sports performance trends.
+- Engineered structured Python scripts and generated thorough technical documentation to accelerate stakeholder decision-making.
+- Managed project versioning and synchronized collaborative workflows using Git and GitHub repository practices.
 
 ## Projects
 
