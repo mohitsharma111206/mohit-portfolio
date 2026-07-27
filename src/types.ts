@@ -77,7 +77,7 @@ export const internships: Internship[] = [
   {
     company: "Tranqli",
     role: "Backend AI Engineer Intern",
-    duration: "Ongoing / Prior",
+    duration: "15 June - 15 July 2026",
     skills: ["Backend Engineering", "Artificial Intelligence", "System Architecture", "API Development", "Python"],
     description: [
       "Engineered and maintained scalable backend architectures for integrating artificial intelligence models.",
