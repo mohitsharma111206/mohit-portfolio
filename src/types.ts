@@ -76,13 +76,13 @@ export const educationList: Education[] = [
 export const internships: Internship[] = [
   {
     company: "Tranqli",
-    role: "Backend AI Engineer Intern",
+    role: "Backend AI Engineer & Web Developer Intern",
     duration: "15 June - 15 July 2026",
-    skills: ["Backend Engineering", "Artificial Intelligence", "System Architecture", "API Development", "Python"],
+    skills: ["Full-Stack Development", "Artificial Intelligence", "RESTful APIs", "UI/UX Design", "Python"],
     description: [
-      "Architected and maintained scalable backend infrastructures to integrate generative AI models, ensuring 99.9% system uptime.",
-      "Engineered robust RESTful APIs and asynchronous data pipelines, supporting high-throughput AI-driven microservices.",
-      "Optimized database queries and API latency by 35%, ensuring seamless, real-time communication between client interfaces and AI endpoints."
+      "Designed and developed responsive, mobile-first web applications while simultaneously engineering the backend architecture to support them.",
+      "Built robust RESTful APIs to seamlessly connect the interactive web frontend with Generative AI models on the backend.",
+      "Optimized data pipelines and interactive elements to minimize latency between the web application and the AI endpoints, ensuring a smooth, real-time user experience."
     ],
     color: "from-purple-500/20 to-pink-500/20 border-purple-500/30 text-purple-400"
   },

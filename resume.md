@@ -41,15 +41,15 @@ A highly motivated B.Tech AI & Data Science student at GEC Bikaner, passionate a
 
 ## Experience
 
-### Backend AI Engineer Intern
+### Backend AI Engineer & Web Developer Intern
 <div class="job-header">
   <span class="company">Tranqli</span>
   <span class="date">15 June - 15 July 2026</span>
 </div>
 
-- Engineered and maintained scalable backend architectures for integrating artificial intelligence models.
-- Designed robust APIs and data pipelines to support AI-driven features and functionalities.
-- Optimized system performance and ensured seamless communication between client interfaces and AI microservices.
+- Designed and developed responsive, mobile-first web applications while simultaneously engineering the backend architecture to support them.
+- Built robust RESTful APIs to seamlessly connect the interactive web frontend with Generative AI models on the backend.
+- Optimized data pipelines and interactive elements to minimize latency between the web application and the AI endpoints, ensuring a smooth, real-time user experience.
 
 ### Data Science Intern
 <div class="job-header">
