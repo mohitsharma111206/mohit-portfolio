@@ -169,29 +169,7 @@ export default function About() {
             <p>{personalInfo.story}</p>
           </div>
 
-          {/* Action Row */}
-          <div className="flex flex-wrap gap-4 pt-2">
-            <motion.button
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              onClick={triggerResumeDownload}
-              className="px-6 py-3 rounded-xl bg-white/5 border border-white/10 text-white font-mono text-xs tracking-wider uppercase flex items-center gap-2 hover:border-cyan-500/30 hover:bg-white/10 hover:shadow-[0_0_20px_rgba(6,182,212,0.15)] transition-all cursor-pointer"
-            >
-              <Download size={14} className={downloading ? "animate-bounce" : ""} />
-              {downloading ? "Generating..." : "Resume"}
-            </motion.button>
-            <motion.button
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              onClick={() => {
-                const contact = document.getElementById("contact-section");
-                if (contact) contact.scrollIntoView({ behavior: "smooth" });
-              }}
-              className="px-6 py-3 rounded-xl bg-cyan-500 text-black font-black font-mono text-xs tracking-wider uppercase flex items-center gap-2 hover:shadow-[0_0_20px_rgba(34,211,238,0.5)] transition-all cursor-pointer"
-            >
-              <Mail size={14} /> Hire Me
-            </motion.button>
-          </div>
+
 
         </div>
       </div>
