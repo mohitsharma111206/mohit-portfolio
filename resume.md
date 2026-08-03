@@ -64,7 +64,7 @@ A highly motivated B.Tech AI & Data Science student at GEC Bikaner, passionate a
 
 ## Projects
 
-### Interactive AI Portfolio
+### Personal Portfolio Made
 <div class="job-header">
   <span class="company">Personal Project</span>
   <span class="date"><a href="https://github.com/mohitsharma111206/mohit-portfolio">View Project</a></span>
