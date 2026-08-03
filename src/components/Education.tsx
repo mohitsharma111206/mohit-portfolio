@@ -17,9 +17,7 @@ export default function Education() {
         
         {/* Section Header */}
         <div className="flex flex-col items-center text-center gap-3 mb-16">
-          <div className="inline-flex items-center gap-2 text-xs font-mono tracking-widest text-purple-400 uppercase">
-            <GraduationCap size={14} /> Academic Encampment
-          </div>
+
           <h2 className="text-3xl md:text-5xl font-black tracking-tight text-white leading-none">
             Education Timeline
           </h2>
