@@ -23,7 +23,7 @@ css: |-
 
 <h1 style="text-align: center; margin-bottom: 0;">Mohit Sharma</h1>
 <div class="contact-info">
-  Rajasthan, India | mohitsharma.111206@gmail.com <br>
+  Rajasthan, India | <a href="mailto:mohitsharma.111206@gmail.com">Email</a> <br>
   <a href="https://www.linkedin.com/in/mohit-sharma-ba0585386/">LinkedIn</a> | <a href="https://github.com/mohitsharma111206">GitHub</a>
 </div>
 
