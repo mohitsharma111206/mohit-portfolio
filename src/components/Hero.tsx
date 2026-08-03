@@ -184,8 +184,6 @@ export default function Hero() {
               <ArrowRight size={13} className="text-slate-950 group-hover:translate-x-1 transition-transform" />
             </button>
             
-
-
             <button 
               onClick={() => scrollToSection("contact-section")}
               className="px-5 py-2.5 rounded-xl border border-dashed border-indigo-500/40 hover:border-indigo-400 text-indigo-300 font-mono text-xs font-bold tracking-wider uppercase transition-all duration-300 flex items-center gap-1.5 cursor-pointer hover:bg-indigo-500/5"
@@ -193,6 +191,37 @@ export default function Hero() {
               <Mail size={13} />
               Let's Talk
             </button>
+
+            {/* Resume Dropdown */}
+            <div className="relative group">
+              <button 
+                className="px-5 py-2.5 rounded-xl border border-purple-500/40 hover:border-purple-400 bg-purple-500/10 text-purple-300 font-mono text-xs font-bold tracking-wider uppercase hover:shadow-[0_0_20px_rgba(168,85,247,0.2)] transition-all duration-300 flex items-center gap-1.5 cursor-pointer"
+              >
+                <Download size={13} />
+                Resume
+              </button>
+              
+              {/* Dropdown Menu (visible on hover) */}
+              <div className="absolute top-full left-1/2 -translate-x-1/2 mt-2 w-[160px] opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 bg-[#0a0d1a] border border-white/10 rounded-xl overflow-hidden shadow-xl z-50">
+                <a 
+                  href="/resume.html" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2 px-4 py-3 text-xs text-slate-300 hover:text-white hover:bg-white/5 transition-colors font-mono"
+                >
+                  <Compass size={14} />
+                  View as Web
+                </a>
+                <a 
+                  href="/resume.pdf" 
+                  download="Mohit_Sharma_Resume.pdf"
+                  className="flex items-center gap-2 px-4 py-3 text-xs text-slate-300 hover:text-white hover:bg-white/5 transition-colors font-mono border-t border-white/5"
+                >
+                  <Download size={14} />
+                  Download PDF
+                </a>
+              </div>
+            </div>
           </motion.div>
         </div>
 
