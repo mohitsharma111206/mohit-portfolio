@@ -202,7 +202,7 @@ export default function Hero() {
               </button>
               
               {/* Dropdown Menu (visible on hover) */}
-              <div className="absolute top-full right-0 mt-2 w-[160px] opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 bg-[#0c0f1d]/80 backdrop-blur-md border border-cyan-500/20 rounded-xl overflow-hidden shadow-[0_0_25px_rgba(6,182,212,0.15)] z-50 origin-top-right">
+              <div className="absolute top-full left-[85%] mt-2 w-[160px] opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 bg-[#0c0f1d]/80 backdrop-blur-md border border-cyan-500/20 rounded-xl overflow-hidden shadow-[0_0_25px_rgba(6,182,212,0.15)] z-50 origin-top-left">
                 <a 
                   href="/resume.html" 
                   target="_blank" 
