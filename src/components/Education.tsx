@@ -19,7 +19,7 @@ export default function Education() {
         <div className="flex flex-col items-center text-center gap-3 mb-16">
 
           <h2 className="text-3xl md:text-5xl font-black tracking-tight text-white leading-none">
-            Education Timeline
+            Education
           </h2>
           <p className="text-slate-400 text-sm md:text-base max-w-lg mt-1">
             Academic progression and structured foundation in Computer Science and intelligent systems.
