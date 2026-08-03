@@ -152,9 +152,7 @@ export default function About() {
           
           {/* Identity Header */}
           <div className="flex flex-col gap-3">
-            <div className="inline-flex items-center gap-2 text-xs font-mono tracking-widest text-cyan-400 uppercase">
-              <User size={14} /> Profile Identity Card
-            </div>
+
             <h1 className="text-4xl md:text-5xl font-black tracking-tight text-white leading-none">
               Mohit Sharma
             </h1>
