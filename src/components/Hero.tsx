@@ -195,29 +195,29 @@ export default function Hero() {
             {/* Resume Dropdown */}
             <div className="relative group">
               <button 
-                className="px-5 py-2.5 rounded-xl border border-purple-500/40 hover:border-purple-400 bg-purple-500/10 text-purple-300 font-mono text-xs font-bold tracking-wider uppercase hover:shadow-[0_0_20px_rgba(168,85,247,0.2)] transition-all duration-300 flex items-center gap-1.5 cursor-pointer"
+                className="px-5 py-2.5 rounded-xl border border-dashed border-cyan-500/40 hover:border-cyan-400 text-cyan-300 font-mono text-xs font-bold tracking-wider uppercase transition-all duration-300 flex items-center gap-1.5 cursor-pointer hover:bg-cyan-500/5 hover:shadow-[0_0_20px_rgba(6,182,212,0.2)]"
               >
                 <Download size={13} />
                 Resume
               </button>
               
               {/* Dropdown Menu (visible on hover) */}
-              <div className="absolute top-full left-1/2 -translate-x-1/2 mt-2 w-[160px] opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 bg-[#0a0d1a] border border-white/10 rounded-xl overflow-hidden shadow-xl z-50">
+              <div className="absolute top-full left-1/2 -translate-x-1/2 mt-2 w-[160px] opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 bg-[#0c0f1d]/80 backdrop-blur-md border border-cyan-500/20 rounded-xl overflow-hidden shadow-[0_0_25px_rgba(6,182,212,0.15)] z-50">
                 <a 
                   href="/resume.html" 
                   target="_blank" 
                   rel="noopener noreferrer"
-                  className="flex items-center gap-2 px-4 py-3 text-xs text-slate-300 hover:text-white hover:bg-white/5 transition-colors font-mono"
+                  className="flex items-center gap-2 px-4 py-3 text-xs text-slate-300 hover:text-cyan-300 hover:bg-cyan-500/10 transition-all font-mono"
                 >
-                  <Compass size={14} />
+                  <Compass size={14} className="text-cyan-400/70" />
                   View as Web
                 </a>
                 <a 
                   href="/resume.pdf" 
                   download="Mohit_Sharma_Resume.pdf"
-                  className="flex items-center gap-2 px-4 py-3 text-xs text-slate-300 hover:text-white hover:bg-white/5 transition-colors font-mono border-t border-white/5"
+                  className="flex items-center gap-2 px-4 py-3 text-xs text-slate-300 hover:text-cyan-300 hover:bg-cyan-500/10 transition-all font-mono border-t border-cyan-500/20"
                 >
-                  <Download size={14} />
+                  <Download size={14} className="text-cyan-400/70" />
                   Download PDF
                 </a>
               </div>
