@@ -91,9 +91,7 @@ export default function Skills() {
         
         {/* Section Header */}
         <div className="flex flex-col items-center text-center gap-3 mb-16">
-          <div className="inline-flex items-center gap-2 text-xs font-mono tracking-widest text-purple-400 uppercase">
-            <Brain size={14} /> System Core Matrix
-          </div>
+
           <h2 className="text-3xl md:text-5xl font-black tracking-tight text-white leading-none">
             Technical Skillset
           </h2>
