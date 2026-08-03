@@ -59,8 +59,6 @@ export default function App() {
         {/* Profile story bio */}
         <About />
 
-        {/* Academic timeline */}
-        <Education />
 
         {/* Professional internship experience */}
         <Timeline />

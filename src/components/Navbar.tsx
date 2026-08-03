@@ -41,7 +41,6 @@ export default function Navbar() {
     const sections = [
       "hero-section",
       "about-section",
-      "education-section",
       "experience-section",
       "skills-section",
       "certifications-section",
@@ -81,7 +80,6 @@ export default function Navbar() {
   const navLinks = [
     { name: "Home", target: "hero-section" },
     { name: "About", target: "about-section" },
-    { name: "Education", target: "education-section" },
     { name: "Experience", target: "experience-section" },
     { name: "Skills", target: "skills-section" },
     { name: "Credentials", target: "certifications-section" },
