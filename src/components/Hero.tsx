@@ -187,14 +187,7 @@ export default function Hero() {
               <ArrowRight size={13} className="text-slate-950 group-hover:translate-x-1 transition-transform" />
             </button>
             
-            <button 
-              onClick={triggerResumeDownload}
-              disabled={downloading}
-              className="px-5 py-2.5 rounded-xl bg-white/[0.03] border border-slate-800 hover:border-slate-500 text-slate-200 font-mono text-xs font-bold tracking-wider uppercase transition-all duration-300 flex items-center gap-1.5 cursor-pointer hover:bg-white/[0.06]"
-            >
-              <Download size={13} className={downloading ? "animate-bounce" : ""} />
-              {downloading ? "Formatting..." : "Download Resume"}
-            </button>
+
 
             <button 
               onClick={() => scrollToSection("contact-section")}
