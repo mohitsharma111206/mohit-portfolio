@@ -17,9 +17,7 @@ export default function Stats() {
         
         {/* Section Header */}
         <div className="flex flex-col items-center text-center gap-3 mb-16">
-          <div className="inline-flex items-center gap-2 text-xs font-mono tracking-widest text-cyan-400 uppercase">
-            <Sparkles size={14} className="text-cyan-400 animate-pulse" /> Milestones
-          </div>
+
           <h2 className="text-3xl md:text-5xl font-black tracking-tight text-white leading-none">
             Professional Highlights
           </h2>
