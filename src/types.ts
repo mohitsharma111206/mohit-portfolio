@@ -220,16 +220,6 @@ export const hobbiesList: Hobby[] = [
     name: "Singing",
     description: "Exploring vocal melodies, pitch modulation, and acoustic covers of indie/classical tracks.",
     iconName: "Mic"
-  },
-  {
-    name: "Reading Books",
-    description: "Devouring literature on computer science history, cosmic science, sci-fi, and philosophy.",
-    iconName: "BookOpen"
-  },
-  {
-    name: "Coding",
-    description: "Building open-source scripts, hacking smart API connections, and setting up automation workflows.",
-    iconName: "Code"
   }
 ];
 
