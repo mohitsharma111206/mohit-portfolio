@@ -225,12 +225,6 @@ export const hobbiesList: Hobby[] = [
 
 export const statistics: Stat[] = [
   {
-    value: "1000+",
-    targetNumber: 1000,
-    label: "Professional Connections",
-    description: "A robust professional network across the AI, ML, and web engineering industries."
-  },
-  {
     value: "2+",
     targetNumber: 2,
     label: "Industry Internships",

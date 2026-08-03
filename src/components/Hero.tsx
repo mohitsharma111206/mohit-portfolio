@@ -156,12 +156,9 @@ export default function Hero() {
             initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.4 }}
-            className="grid grid-cols-3 gap-3 w-full max-w-md my-2"
+            className="grid grid-cols-2 gap-3 w-full max-w-md my-2"
           >
-            <div className="p-3 rounded-xl bg-white/[0.02] border border-white/5 flex flex-col justify-center items-center">
-              <span className="text-lg md:text-xl font-black text-blue-400 leading-tight">1000+</span>
-              <span className="text-[9px] text-slate-500 font-mono uppercase tracking-wider mt-0.5 text-center">LinkedIn Connections</span>
-            </div>
+
             <div className="p-3 rounded-xl bg-white/[0.02] border border-white/5 flex flex-col justify-center items-center">
               <span className="text-lg md:text-xl font-black text-indigo-400 leading-tight">2+</span>
               <span className="text-[9px] text-slate-500 font-mono uppercase tracking-wider mt-0.5 text-center">Industry Internships</span>
