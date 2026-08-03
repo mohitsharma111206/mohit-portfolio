@@ -178,9 +178,7 @@ export default function Hobbies({ hoverPositionRef }: HobbiesProps) {
   return (
     <section id="hobbies-section" className="relative py-32 px-6 md:px-12 overflow-hidden border-t border-white/5">
       <div className="max-w-6xl mx-auto w-full relative z-10 flex flex-col items-center text-center gap-3 mb-20">
-        <div className="inline-flex items-center gap-2 text-xs font-mono tracking-widest text-cyan-400/80 uppercase">
-          <Sparkles size={12} /> The Big Picture
-        </div>
+
         <h2 className="text-3xl md:text-5xl font-black tracking-tight text-white leading-none">
           Creative Assembly
         </h2>
