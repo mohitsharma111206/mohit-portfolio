@@ -280,12 +280,7 @@ export default function Contact() {
             </div>
           </div>
 
-        {/* Footer info block */}
-        <div className="border-t border-white/5 mt-20 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-white/30 text-[10px] font-mono">
-          <div>
-            &copy; 2026 {personalInfo.name}. All rights reserved. Built with React & Tailwind.
-          </div>
-        </div>
+
 
       </div>
     </section>
