@@ -80,8 +80,9 @@ A highly motivated B.Tech AI & Data Science student at GEC Bikaner, passionate a
   <span class="date"><a href="https://vyoma-eosin.vercel.app/">View Project</a></span>
 </div>
 
-- Engineered immersive 3D scroll animations and an interactive contact form, heavily optimizing rendering logic to ensure a smooth 60FPS user experience.
-- Designed and developed a modern web application with a focus on cutting-edge UI architecture and responsive layouts for cross-device compatibility.
+- Designed and developed a high-performance web development agency website to showcase modern UI architecture and custom web solutions.
+- Engineered immersive 3D scroll animations and integrated an interactive contact form, optimizing rendering logic to maintain a consistent 60FPS user experience.
+- Implemented responsive, cross-device layouts using cutting-edge frontend technologies to deliver a premium digital experience for prospective clients.
 
 ## Education
 
