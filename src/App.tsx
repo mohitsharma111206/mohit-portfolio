@@ -10,8 +10,7 @@ import Certifications from "./components/Certifications";
 import Hobbies from "./components/Hobbies";
 import Contact from "./components/Contact";
 import SpaceBackground from "./components/SpaceBackground";
-import CustomCursor from "./components/CustomCursor";
-import GlobalCursorGlow from "./components/GlobalCursorGlow";
+
 import LoadingScreen from "./components/LoadingScreen";
 
 export default function App() {
@@ -33,11 +32,7 @@ export default function App() {
       {/* Cinematic Loading Screen */}
       {isLoading && <LoadingScreen onComplete={() => setIsLoading(false)} />}
       
-      <CustomCursor />
-      
-      {/* Massive ambient cursor light */}
-      <GlobalCursorGlow />
-      
+
       {/* Cinematic Deep Space Background */}
       <SpaceBackground hoverPositionRef={hoverPositionRef} hoverRadius={300} />
       
