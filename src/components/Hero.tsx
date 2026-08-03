@@ -71,7 +71,7 @@ export default function Hero() {
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[35vw] h-[35vw] bg-blue-500/5 rounded-full blur-[120px] pointer-events-none" />
 
       {/* Hero Outer Wrapper */}
-      <div className="max-w-4xl mx-auto w-full relative z-10 flex flex-col items-center text-center gap-6">
+      <div className="max-w-4xl mx-auto w-full relative z-30 flex flex-col items-center text-center gap-6">
         
         {/* Left Side: Rich Bio Introduction */}
         <div className="flex flex-col items-center gap-6 text-center">
