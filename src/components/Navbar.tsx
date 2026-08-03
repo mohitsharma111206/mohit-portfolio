@@ -125,7 +125,7 @@ export default function Navbar() {
                 {personalInfo.name}
               </span>
               <span className="text-[8px] text-white/50 font-mono tracking-widest mt-0.5 uppercase italic">
-                Portfolio_2026.sys
+                Portfolio
               </span>
             </div>
           </button>

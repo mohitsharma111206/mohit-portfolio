@@ -18,16 +18,15 @@ export default function Contact() {
     e.preventDefault();
     if (!formState.name || !formState.email || !formState.subject || !formState.message) {
       setStatus("error");
-      setTerminalLogs(["[ERROR] Validation failed. Missing required system input parameters."]);
+      setTerminalLogs(["[ERROR] Validation failed. Missing required fields."]);
       return;
     }
 
     setStatus("submitting");
     setTerminalLogs([
-      "[SYSTEM] Initializing instant email dispatch protocol...",
-      "[SYS] Routing payload via EmailJS SMTP relay gateway...",
-      "[SYS] Compiling payload packets...",
-      "[SYS] Establishing handshake with EmailJS servers..."
+      "Initializing message delivery...",
+      "Connecting to email server...",
+      "Sending message..."
     ]);
 
     const serviceId = (import.meta as any).env.VITE_EMAILJS_SERVICE_ID || "service_fgfjxle";
@@ -48,9 +47,8 @@ export default function Contact() {
         setStatus("success");
         setTerminalLogs(prev => [
           ...prev,
-          "[OK] Payload received successfully by EmailJS SMTP relay.",
-          "[OK] Message successfully queued for dispatch.",
-          "[SYSTEM] Signal fully transmitted. Closing socket connection."
+          "Message successfully delivered.",
+          "Connection closed."
         ]);
         setFormState({ name: "", email: "", subject: "", message: "" });
       } else {
@@ -60,9 +58,9 @@ export default function Contact() {
       setStatus("error");
       setTerminalLogs(prev => [
         ...prev,
-        `[ERROR] Payload delivery failed: ${error?.text || error?.message || "EmailJS connection timeout."}`,
-        "[SYSTEM] Unable to auto-route message to SMTP gateway.",
-        "[SYSTEM] Please try submitting again or email directly to m1mohitsharma1@gmail.com"
+        `[ERROR] Message delivery failed: ${error?.text || error?.message || "Connection timeout."}`,
+        "Unable to send message.",
+        "Please try submitting again or email directly to m1mohitsharma1@gmail.com"
       ]);
     }
   };
@@ -80,7 +78,7 @@ export default function Contact() {
         {/* Prominent CTA Title */}
         <div className="flex flex-col items-center text-center gap-4 mb-16">
           <div className="inline-flex items-center gap-2 text-xs font-mono tracking-widest text-cyan-400 uppercase">
-            <Mail size={14} /> Communications Core
+            <Mail size={14} /> Contact Me
           </div>
           
           <h2 className="text-3xl sm:text-5xl md:text-6xl font-black tracking-tight text-white leading-tight max-w-3xl">
@@ -88,7 +86,7 @@ export default function Contact() {
           </h2>
           
           <p className="text-slate-400 text-sm md:text-base max-w-xl mt-1">
-            Whether you are a recruiter, startup founder, or fellow explorer, let's synchronize our efforts to engineer outstanding intelligent products.
+            Whether you are a recruiter, startup founder, or fellow developer, let's connect and build something amazing together.
           </p>
         </div>
 
@@ -107,10 +105,10 @@ export default function Contact() {
                     <CheckCircle size={28} />
                   </div>
                   <h3 className="text-white font-extrabold text-xl tracking-tight">
-                    Transmission Dispatched!
+                    Message Sent!
                   </h3>
                   <p className="text-slate-400 text-xs sm:text-sm max-w-sm">
-                    Thank you! Your transmission has successfully bypassed firewall filters and arrived in Mohit's core routing node.
+                    Thank you! Your message has been successfully sent to Mohit.
                   </p>
                   <button
                     onClick={() => {
@@ -119,7 +117,7 @@ export default function Contact() {
                     }}
                     className="px-4 py-2 rounded-xl bg-white/5 border border-white/10 text-xs font-mono text-slate-300 hover:text-white transition mt-4"
                   >
-                    Send Another Packet
+                    Send Another Message
                   </button>
                 </motion.div>
               ) : (
@@ -142,7 +140,7 @@ export default function Contact() {
                         }}
                         whileHover={{ scale: 1.05 }}
                       >
-                        Identifier / Name *
+                        Name *
                       </motion.label>
                       <input
                         id="name"
@@ -172,7 +170,7 @@ export default function Contact() {
                         }}
                         whileHover={{ scale: 1.05 }}
                       >
-                        Routing Address / Email *
+                        Email *
                       </motion.label>
                       <input
                         id="email"
@@ -242,7 +240,7 @@ export default function Contact() {
                       rows={5}
                       value={formState.message}
                       onChange={handleInputChange}
-                      placeholder="Input your instructions or collaboration specifications here..."
+                      placeholder="Write your message here..."
                       className="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-slate-100 text-xs focus:outline-none focus:border-cyan-500/50 focus:ring-1 focus:ring-cyan-500/20 transition-all placeholder-slate-700 font-mono resize-none leading-relaxed"
                     />
                   </div>
@@ -267,7 +265,7 @@ export default function Contact() {
                     >
                       <div className="flex items-center gap-2 text-white/50 border-b border-white/5 pb-1.5 mb-1.5">
                         <Terminal size={12} className="text-cyan-400 animate-pulse" />
-                        <span>TRANSMISSION_STATUS_STREAM</span>
+                        <span>Sending Status</span>
                       </div>
                       {terminalLogs.map((log, index) => (
                         <div key={index} className={log.startsWith("[ERROR]") ? "text-rose-400" : log.startsWith("[OK]") ? "text-emerald-400" : log.startsWith("[SYS") ? "text-cyan-400/80" : "text-slate-400"}>
@@ -286,10 +284,6 @@ export default function Contact() {
         <div className="border-t border-white/5 mt-20 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-white/30 text-[10px] font-mono">
           <div>
             &copy; 2026 {personalInfo.name}. All rights reserved. Built with React & Tailwind.
-          </div>
-          <div className="flex gap-4">
-            <span className="text-cyan-500">SYSTEM_READY</span>
-            <span>SEC_LEVEL_01_PASS</span>
           </div>
         </div>
 
