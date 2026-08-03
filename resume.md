@@ -70,9 +70,9 @@ A highly motivated B.Tech AI & Data Science student at GEC Bikaner, passionate a
   <span class="date"><a href="https://github.com/mohitsharma111206/mohit-portfolio">View Project</a></span>
 </div>
 
-- Architected a high-performance, interactive personal portfolio using React, TypeScript, and Framer Motion.
-- Engineered a custom physics-based cursor glow and fluid micro-interactions to enhance user engagement.
-- Optimized component rendering to achieve zero lag on mobile environments while maintaining complex backdrop blurs.
+- Developed a responsive personal portfolio website to showcase Machine Learning projects, Data Science skills, and academic achievements.
+- Implemented an immersive galaxy-themed background using HTML5 Canvas and React hooks with dynamic parallax and interactive hover effects.
+- Integrated a customized contact form with EmailJS and built a modular component architecture using Tailwind CSS for streamlined updates.
 
 ### Vyoma.webx
 <div class="job-header">
