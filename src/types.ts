@@ -66,10 +66,7 @@ export const educationList: Education[] = [
     field: "Artificial Intelligence & Data Science",
     duration: "2025 – 2029",
     location: "Rajasthan, India",
-    achievements: [
-      "Rigorous academic curriculum focusing on advanced mathematics, statistics, computer science, and core AI methodologies.",
-      "Hands-on research and building smart systems using Python, C++, and machine learning tools."
-    ]
+    achievements: []
   }
 ];
 

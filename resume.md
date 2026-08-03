@@ -92,8 +92,6 @@ A highly motivated B.Tech AI & Data Science student at GEC Bikaner, passionate a
   <span class="date">2025 – 2029</span>
 </div>
 
-- Rigorous academic curriculum focusing on advanced mathematics, statistics, computer science, and core AI methodologies.
-- Hands-on research and building smart systems using Python, C++, and machine learning tools.
 
 ## Certifications
 
