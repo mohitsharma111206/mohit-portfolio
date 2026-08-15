@@ -64,6 +64,16 @@ A highly motivated B.Tech AI & Data Science student at GEC Bikaner, passionate a
 
 ## Projects
 
+### TCONGS INFOTECH — Corporate Website Redesign
+<div class="job-header">
+  <span class="company">Personal Project</span>
+  <span class="date"><a href="https://github.com/mohitsharma111206/tcongs-infotech-redesign">View Project</a></span>
+</div>
+
+- Engineered a premium, modern corporate website with a focus on editorial typography, fluid animations, and a sleek dark glassmorphism aesthetic.
+- Built a robust frontend architecture utilizing React 18, Vite, TypeScript, and vanilla CSS for optimal performance and responsive design.
+- Implemented custom scroll animations using Intersection Observer and engineered an interactive support chat interface with seamless morphological transitions.
+
 ### Personal Portfolio
 <div class="job-header">
   <span class="company">Personal Project</span>
