@@ -70,9 +70,9 @@ A highly motivated B.Tech AI & Data Science student at GEC Bikaner, passionate a
   <span class="date"><a href="https://tcongs-infotech-redesign-mauve.vercel.app/">View Project</a></span>
 </div>
 
-- Engineered a premium, modern corporate website with a focus on editorial typography, fluid animations, and a sleek dark glassmorphism aesthetic.
-- Built a robust frontend architecture utilizing React 18, Vite, TypeScript, and vanilla CSS for optimal performance and responsive design.
-- Implemented custom scroll animations using Intersection Observer and engineered an interactive support chat interface with seamless morphological transitions.
+- Redesigned and developed a modern, professional corporate website for a technology agency to enhance their digital presence and client engagement.
+- Built a responsive frontend architecture using React, Vite, and TypeScript to ensure fast load times and a seamless user experience across devices.
+- Integrated an interactive support chat interface to improve customer communication and streamlined navigation with custom scroll animations.
 
 ### Personal Portfolio
 <div class="job-header">
@@ -80,9 +80,9 @@ A highly motivated B.Tech AI & Data Science student at GEC Bikaner, passionate a
   <span class="date"><a href="https://github.com/mohitsharma111206/mohit-portfolio">View Project</a></span>
 </div>
 
-- Developed a responsive personal portfolio website to showcase Machine Learning projects, Data Science skills, and academic achievements.
-- Implemented an immersive galaxy-themed background using HTML5 Canvas and React hooks with dynamic parallax and interactive hover effects.
-- Integrated a customized contact form with EmailJS and built a modular component architecture using Tailwind CSS for streamlined updates.
+- Developed a responsive portfolio website to effectively showcase technical skills, Machine Learning projects, and academic achievements to recruiters.
+- Built an engaging user interface using React and HTML5 Canvas, creating interactive visual elements that highlight front-end development capabilities.
+- Implemented a direct contact form using EmailJS to facilitate easy communication and designed a modular component architecture for maintainability using Tailwind CSS.
 
 ### Vyoma.webx
 <div class="job-header">
@@ -90,9 +90,9 @@ A highly motivated B.Tech AI & Data Science student at GEC Bikaner, passionate a
   <span class="date"><a href="https://vyoma-eosin.vercel.app/">View Project</a></span>
 </div>
 
-- Designed and developed a high-performance web development agency website using React and Tailwind CSS to showcase modern UI architecture and custom web solutions.
-- Engineered immersive 3D scroll animations using Framer Motion and integrated an interactive contact form, optimizing rendering logic to maintain a consistent 60FPS user experience.
-- Implemented responsive, cross-device layouts to deliver a premium digital experience for prospective clients.
+- Developed a comprehensive agency website using React and Tailwind CSS to showcase web development services and custom digital solutions to prospective clients.
+- Built an interactive interface with animations using Framer Motion to create an engaging user journey and highlight technical capabilities.
+- Integrated a fully functional contact form to drive client lead generation and ensured a seamless, responsive experience across all devices.
 
 ## Education
 
