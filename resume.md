@@ -27,6 +27,8 @@ css: |-
   <a href="https://www.linkedin.com/in/mohit-sharma-ba0585386/">LinkedIn</a> | <a href="https://github.com/mohitsharma111206">GitHub</a>
 </div>
 
+## Professional Summary
+
 <div class="summary">
 I’m a backend-focused developer interested in building practical web applications and AI-powered solutions. I work with Python, JavaScript, React, and TypeScript, combining backend logic, API integrations, and clean user interfaces to solve real problems. I enjoy understanding how systems work and building software that is reliable, efficient, and easy to maintain.
 </div>
