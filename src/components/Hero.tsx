@@ -23,9 +23,9 @@ export default function Hero() {
   }, []);
 
   const subtitles = [
-    "Machine Learning Enthusiast",
-    "Data Scientist",
-    "Web Developer",
+    "Backend-Focused Developer",
+    "AI & Web Solutions",
+    "Full-Stack Developer",
     "Problem Solver"
   ];
 
@@ -148,7 +148,7 @@ export default function Hero() {
             transition={{ duration: 0.8, delay: 0.3 }}
             className="text-slate-400 text-sm sm:text-base md:text-lg leading-relaxed max-w-2xl font-sans text-center"
           >
-            I build intelligent machine learning systems, analyze complex datasets to extract key insights, and engineer high-performance web applications that bridge AI models with beautiful UX.
+            I’m a backend-focused developer interested in building practical web applications and AI-powered solutions. I work with Python, JavaScript, React, and TypeScript, combining backend logic, API integrations, and clean user interfaces to solve real problems. I enjoy understanding how systems work and building software that is reliable, efficient, and easy to maintain.
           </motion.p>
 
           {/* Core Stats / Quick Facts Grid */}

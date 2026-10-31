@@ -157,7 +157,7 @@ export default function About() {
               Mohit Sharma
             </h1>
             <p className="text-lg md:text-xl font-mono text-slate-300 font-medium">
-              AI & Data Science Student & Enthusiast
+              Backend-Focused Developer & AI Enthusiast
             </p>
           </div>
 

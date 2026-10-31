@@ -55,6 +55,7 @@ export const personalInfo = {
   linkedin: "https://www.linkedin.com/in/mohit-sharma-ba0585386/",
   github: "https://github.com/mohitsharma111206",
   instagram: "https://instagram.com/mohit.avx",
+  bio: "I’m a backend-focused developer interested in building practical web applications and AI-powered solutions. I work with Python, JavaScript, React, and TypeScript, combining backend logic, API integrations, and clean user interfaces to solve real problems. I enjoy understanding how systems work and building software that is reliable, efficient, and easy to maintain.",
   intro: "I’m a backend-focused developer interested in building practical web applications and AI-powered solutions.",
   story: "I work with Python, JavaScript, React, and TypeScript, combining backend logic, API integrations, and clean user interfaces to solve real problems. I enjoy understanding how systems work and building software that is reliable, efficient, and easy to maintain."
 };
