@@ -28,7 +28,7 @@ css: |-
 </div>
 
 <div class="summary">
-A highly motivated B.Tech AI & Data Science student at GEC Bikaner, passionate about constructing intelligent software. Driven by an insatiable curiosity for Machine Learning, Data Analytics, workflow automation, and modern full-stack web applications, I combine computational thinking with creative problem-solving to deliver production-grade systems.
+I’m a backend-focused developer interested in building practical web applications and AI-powered solutions. I work with Python, JavaScript, React, and TypeScript, combining backend logic, API integrations, and clean user interfaces to solve real problems. I enjoy understanding how systems work and building software that is reliable, efficient, and easy to maintain.
 </div>
 
 ## Technical Skills

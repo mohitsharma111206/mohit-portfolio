@@ -49,14 +49,14 @@ export interface Stat {
 // Portfolio Data
 export const personalInfo = {
   name: "Mohit Sharma",
-  headline: "AI & Data Science Student | Machine Learning | Python, C++ | Building Intelligent Systems",
+  headline: "Backend-Focused Developer | AI & Web Solutions | Python, React, TypeScript",
   location: "Rajasthan, India",
   email: "mohitsharma.111206@gmail.com",
   linkedin: "https://www.linkedin.com/in/mohit-sharma-ba0585386/",
   github: "https://github.com/mohitsharma111206",
   instagram: "https://instagram.com/mohit.avx",
-  intro: "Results-driven Backend AI Engineer & Data Science student, specializing in intelligent system architecture and modern web technologies.",
-  story: "A highly motivated B.Tech AI & Data Science student at GEC Bikaner, passionate about constructing intelligent software. Driven by an insatiable curiosity for Machine Learning, Data Analytics, and high-performance backend systems, I combine computational thinking with creative problem-solving to deliver production-grade applications."
+  intro: "I’m a backend-focused developer interested in building practical web applications and AI-powered solutions.",
+  story: "I work with Python, JavaScript, React, and TypeScript, combining backend logic, API integrations, and clean user interfaces to solve real problems. I enjoy understanding how systems work and building software that is reliable, efficient, and easy to maintain."
 };
 
 export const educationList: Education[] = [
