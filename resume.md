@@ -32,16 +32,15 @@ A highly motivated B.Tech AI & Data Science student at GEC Bikaner, passionate a
 </div>
 
 ## Technical Skills
-- **Programming:** C, C++, Python
-- **Backend Development:** Backend Engineering, System Architecture, API Development, Model Integration
-- **Artificial Intelligence:** Generative AI, Prompt Engineering, AI Fundamentals
-- **Data Science:** Pandas, Matplotlib, Seaborn, Data Visualization
-- **Web Development:** HTML, CSS, JavaScript, Responsive Design, UI/UX Design
+- **Programming:** C, C++, Python, JavaScript, TypeScript
+- **Backend Dev:** Backend Engineering, System Architecture, RESTful API Development, API Integration, Model Integration
+- **Data Science:** Pandas, Matplotlib, Seaborn, Exploratory Data Analysis, Data Visualization
+- **Web Development:** HTML5, CSS3, React, Vite, Responsive Design, UI/UX Design, Tailwind CSS, Framer Motion
 - **Tools & Automation:** n8n, Workflow Automation, Git, GitHub, Jupyter Notebook, Google AI Studio, Replit
 
 ## Experience
 
-### Backend AI Engineer & Web Developer Intern
+### Backend AI Engineer
 <div class="job-header">
   <span class="company">Tranqli</span>
   <span class="date">15 June - 15 July 2026</span>
@@ -57,32 +56,19 @@ A highly motivated B.Tech AI & Data Science student at GEC Bikaner, passionate a
   <span class="date">February 2026</span>
 </div>
 
-- Conducted extensive Exploratory Data Analysis (EDA) on real-world datasets including Delhi Air Quality Index (AQI) and Cricket Fielding Data.
 - Designed comprehensive data visualization suites using Matplotlib and Seaborn (histograms, boxplots, scatterplots) to uncover environmental and sports performance trends.
 - Engineered structured Python scripts and generated thorough technical documentation to accelerate stakeholder decision-making.
-- Managed project versioning and synchronized collaborative workflows using Git and GitHub repository practices.
 
 ## Projects
 
-### TCONGS INFOTECH — Corporate Website Redesign
+### AI Research Assistant — Full-Stack RAG Application
 <div class="job-header">
   <span class="company">Personal Project</span>
-  <span class="date"><a href="https://tcongs-infotech-redesign-mauve.vercel.app/">View Project</a></span>
 </div>
 
-- Redesigned and developed a modern, professional corporate website for a technology agency to enhance their digital presence and client engagement.
-- Built a responsive frontend architecture using React, Vite, and TypeScript to ensure fast load times and a seamless user experience across devices.
-- Integrated an interactive support chat interface to improve customer communication and streamlined navigation with custom scroll animations.
-
-### Personal Portfolio
-<div class="job-header">
-  <span class="company">Personal Project</span>
-  <span class="date"><a href="https://github.com/mohitsharma111206/mohit-portfolio">View Project</a></span>
-</div>
-
-- Developed a responsive portfolio website to effectively showcase technical skills, Machine Learning projects, and academic achievements to recruiters.
-- Built an engaging user interface using React and HTML5 Canvas, creating interactive visual elements that highlight front-end development capabilities.
-- Implemented a direct contact form using EmailJS to facilitate easy communication and designed a modular component architecture for maintainability using Tailwind CSS.
+- Full-stack question-answering application using retrieval-augmented generation to connect relevant domain information with language-model responses.
+- Combines a React interface, Python API layer, document retrieval, and LLM integration to support contextual responses grounded in source material.
+- Architecture focuses on modular frontend/backend responsibilities and API-driven interaction between retrieval and generation components.
 
 ### Vyoma.webx
 <div class="job-header">

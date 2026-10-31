@@ -73,7 +73,7 @@ export const educationList: Education[] = [
 export const internships: Internship[] = [
   {
     company: "Tranqli",
-    role: "Backend AI Engineer & Web Developer Intern",
+    role: "Backend AI Engineer",
     duration: "15 June - 15 July 2026",
     skills: ["Full-Stack Development", "Artificial Intelligence", "RESTful APIs", "UI/UX Design", "Python"],
     description: [
@@ -89,10 +89,8 @@ export const internships: Internship[] = [
     duration: "February 2026",
     skills: ["Python", "Pandas", "Matplotlib", "Seaborn", "Jupyter Notebook", "EDA", "Data Visualization", "GitHub Project Management"],
     description: [
-      "Conducted extensive Exploratory Data Analysis (EDA) on real-world datasets including Delhi Air Quality Index (AQI) and Cricket Fielding Data.",
       "Designed comprehensive data visualization suites using Matplotlib and Seaborn (histograms, boxplots, scatterplots) to uncover environmental and sports performance trends.",
-      "Engineered structured Python scripts and generated thorough technical documentation to accelerate stakeholder decision-making.",
-      "Managed project versioning and synchronized collaborative workflows using Git and GitHub repository practices."
+      "Engineered structured Python scripts and generated thorough technical documentation to accelerate stakeholder decision-making."
     ],
     color: "from-cyan-500/20 to-blue-500/20 border-cyan-500/30 text-cyan-400"
   }
@@ -103,29 +101,31 @@ export const skillsList: Skill[] = [
   { name: "C", category: "Programming", level: 5 },
   { name: "C++", category: "Programming", level: 5 },
   { name: "Python", category: "Programming", level: 5 },
+  { name: "JavaScript", category: "Programming", level: 5 },
+  { name: "TypeScript", category: "Programming", level: 5 },
   
   // Data Science
   { name: "Pandas", category: "Data Science", level: 5 },
   { name: "Matplotlib", category: "Data Science", level: 5 },
   { name: "Seaborn", category: "Data Science", level: 5 },
+  { name: "Exploratory Data Analysis", category: "Data Science", level: 5 },
   { name: "Data Visualization", category: "Data Science", level: 5 },
 
-  // AI
-  { name: "Generative AI", category: "Artificial Intelligence", level: 5 },
-  { name: "Prompt Engineering", category: "Artificial Intelligence", level: 5 },
-  { name: "AI Fundamentals", category: "Artificial Intelligence", level: 5 },
-
   // Web Dev
-  { name: "HTML", category: "Web Development", level: 5 },
-  { name: "CSS", category: "Web Development", level: 5 },
-  { name: "JavaScript", category: "Web Development", level: 5 },
+  { name: "HTML5", category: "Web Development", level: 5 },
+  { name: "CSS3", category: "Web Development", level: 5 },
+  { name: "React", category: "Web Development", level: 5 },
+  { name: "Vite", category: "Web Development", level: 5 },
   { name: "Responsive Design", category: "Web Development", level: 5 },
   { name: "UI/UX Design", category: "Web Development", level: 5 },
+  { name: "Tailwind CSS", category: "Web Development", level: 5 },
+  { name: "Framer Motion", category: "Web Development", level: 5 },
 
   // Backend Development
   { name: "Backend Engineering", category: "Backend Development", level: 5 },
   { name: "System Architecture", category: "Backend Development", level: 5 },
-  { name: "API Development", category: "Backend Development", level: 5 },
+  { name: "RESTful API Development", category: "Backend Development", level: 5 },
+  { name: "API Integration", category: "Backend Development", level: 5 },
   { name: "Model Integration", category: "Backend Development", level: 5 },
 
   // Automation

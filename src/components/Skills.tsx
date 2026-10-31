@@ -71,11 +71,12 @@ const categoryColors: Record<string, { tag: string; border: string; glow: string
 export default function Skills() {
   const [selectedCategory, setSelectedCategory] = useState<string>("All");
 
-  const categories = ["All", "Artificial Intelligence", "Data Science", "Programming", "Web Development", "Backend Development", "Automation", "Tools"];
+  const categories = ["All", "Programming", "Backend Development", "Data Science", "Web Development", "Automation", "Tools"];
 
-  // Unique categories list for grouping
+  // Unique categories list for grouping (only categories with skills)
+  const availableCategories = Object.keys(categoryDescriptions).filter(cat => skillsList.some(s => s.category === cat));
   const activeCategories = selectedCategory === "All"
-    ? Object.keys(categoryDescriptions)
+    ? availableCategories
     : [selectedCategory];
 
   return (
